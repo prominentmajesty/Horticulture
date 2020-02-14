@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+  <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya+Sans+SC|Archivo+Narrow|Asap|Bahianita|Baumans|Bungee|Bungee+Inline|Cairo|Changa|Cookie|Courgette|Crete+Round|Faster+One|Geo|Gruppo|Julius+Sans+One|Khand|Lexend+Zetta|Lobster+Two|Marcellus+SC|Monoton|Orbitron|Pathway+Gothic+One|Quantico|Quicksand|Rajdhani|Rubik+Mono+One|Saira|Saira+Condensed|Saira+Extra+Condensed|Saira+Semi+Condensed|Source+Code+Pro|Squada+One|Sunflower:300|Tajawal|Teko|Titillium+Web|Unica+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/bootstrap.css">
+    <link rel="stylesheet" href="/styles/bodyStyle.css">
+    <link rel="stylesheet" href="/all.css">
+    <link rel="stylesheet" href="/styles/{{style}}">
+</head>
+<body style="overflow-x: hidden">
+  {{{body}}}  
+  <script src="/scripts/jquery-3.4.1.min.js"></script>
+  <script src="/scripts/bootstrap.js"></script>
+  <script src="/scripts/bodyScript.js"></script>
+  <script src="/scripts/{{script}}"></script>
+  <script type="text/javascript">
+   $('#customFile').change(function(event){
+        var fileName = event.target.files[0].name;
+        if (event.target.nextElementSibling!=null){
+            event.target.nextElementSibling.innerText=fileName; 
+        }
+    });
+</script>
+</body>
+</html>
