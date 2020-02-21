@@ -20,11 +20,11 @@ router.post('/postData', (req, res)=>{
       
     if(err){
             console.log(err);
-            return res.status(401).send(err);
+            return res.status(406).send(err);
     
         }else if(returnedEmail){
            console.log("email already exist !!");
-           return res.status(500).json({data: 'Email Adress A ready Exist'});
+           return res.status(501).json({msg: 'Email Adress Allready Exist'});
        }else{
 
            var user = new User({
@@ -36,7 +36,7 @@ router.post('/postData', (req, res)=>{
 
            user.save().then((data)=>{
             console.log(data);
-            res.status(200).send(data);
+            res.status(200).json({data : data});
 
            }).catch((err)=>{
                console.log(err);

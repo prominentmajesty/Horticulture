@@ -17,6 +17,7 @@ $(function () {
   var ConfirmPassword = document.getElementById('ConfirmPassword');
   var submitButton = document.getElementById('submitButton');
   var alartDiv = document.getElementById('alartDiv');
+  var signupForm = document.signupForm;
   
   var regexForUserName = /^[0-9a-zA-Z]{1,300}$/;
   var regexForEmailAddres = /^([a-z\d]{2,})@([a-z]{2,7})\.([a-z]{2,3})(\.[a-z]{2,3})?/;
@@ -258,7 +259,7 @@ $(document).ready(function(){
       function validatePassword(){
         if(!regexForPassword.test(Password.value)){
           $(alartDiv).html('');
-          var content = document.createTextNode("Error !! Wrong password parttern, Use a partern like ucgs232!");
+          var content = document.createTextNode("Error !! Wrong password parttern, password should contain alpha numeric and at least a special character and must be greater than 7");
           alartDiv.appendChild(content);
           alartDiv.style.display = 'block';
           Password.classList.remove('is-valid');
@@ -279,7 +280,7 @@ $(document).ready(function(){
       function validateConfirmPassword(){
         if(!regexForConfirmPassword.test(ConfirmPassword.value)){
           $(alartDiv).html('');
-          var content = document.createTextNode("Error !! Wrong password parttern, Use a partern like ucgs232!");
+          var content = document.createTextNode("Error !! Wrong password parttern, password should contain alpha numeric and at least a special character and must be greater than 7");
           alartDiv.appendChild(content);
           alartDiv.style.display = 'block';
           ConfirmPassword.classList.remove('is-valid');
@@ -304,17 +305,30 @@ $(document).ready(function(){
           Password : Password.value,
           ConfirmPassword : ConfirmPassword.value
         }
-        $ajax({
+        $.ajax({
           method : 'POST',
           url : '/users/postData',
           dataType : 'json',
           data : postData,
-          success : function(data){
-              console.log(data);
+
+          statusCode : {
+              406 : function(msg, status, jqXHR){
+                console.log(status);
+              },
+              501 : function(msg, status, jqXHR){
+                console.log(status);
+              },
+            200 : function(msg, status, jqXHR){
+              console.log(status);
+            }
           },
-          failure : function(error){
-              console.log(error);
-          }
+
+        }).done(function (msg, status, jqXHR) {
+            console.log(jqXHR.responseJSON.data);
+            signupForm.reset();
+
+        }).fail(function (jqXHR, textStatus) {
+            console.log(jqXHR.responseJSON.msg);
         });
       }
 
@@ -322,7 +336,7 @@ $(document).ready(function(){
         e.preventDefault();
         if(checkIfUserIsEmpty() && checkIfEmailIsEmpty() && checkIfPasswordIsEmpty() && checkIfConfirmPasswordIsEmpty()){
             if(validateUserName() && validateEmail() && validatePassword() && validateConfirmPassword()){
-                  // execute your request...
+              uploadToServer();
             }
           }
       });
