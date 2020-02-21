@@ -1,0 +1,59 @@
+
+#home-section{
+    background : url(../images/pic-2.jpg);
+    background-repeat : no-repeat;
+    background-size : cover;
+    background-attachment : fixed;
+    min-height: 700px;
+}
+#home-section .dark-overlay{
+   position : absolute;
+   top:0;
+   left : 0;
+   width : 100%;
+   min-height: 700px;
+   background : rgba(0,0,0,0.7);
+}
+#home-section .home-inner{
+    padding-top : 150px;
+}
+#home-section .fas{
+    color : #008ed6;
+    background : #fff;
+    padding : 5px;
+    border-radius : 5px 
+}
+#explore-section .fas, #share-section .fas{
+    background : #333;
+    color : #fff;
+    padding: 5px;
+    border-radius : 5px
+}
+#video-play{
+    position : relative;
+    margin-top:60px;
+    min-height:200px;
+    background:url('../images/media.jpg');
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-position: 0 -300px;
+    text-align: center;
+    color:#fff; 
+}
+#video-play a{
+    color:#fff
+}
+.dark-overlay{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.7);
+}
+.formatExplore{
+    font-family: 'Titillium Web', sans-serif;
+}
+.clickToLearnMore{
+    font-family: 'Press Start 2P', cursive;
+}

@@ -1,4 +1,5 @@
 var express = require('express');
+var User = require('../models/users');
 
 var router = express.Router();
 router.get('/userDashBoard', (req, res)=>{
@@ -8,4 +9,41 @@ router.get('/userDashBoard', (req, res)=>{
         script : 'users.js'
     });
 });
+
+router.post('/postData', (req, res)=>{
+    var UserName = req.body.UserName;
+    var Email = req.body.Email;
+    var Password = req.body.Password;
+    var ConfirmPassword = req.body.ConfirmPassword;
+    
+   User.findOne({Email : Email}, function(err, returnedEmail){
+      
+    if(err){
+            console.log(err);
+            return res.status(401).send(err);
+    
+        }else if(returnedEmail){
+           console.log("email already exist !!");
+           return res.status(500).json({data: 'Email Adress A ready Exist'});
+       }else{
+
+           var user = new User({
+               UserName : UserName,
+               Email : Email,
+               Password : Password,
+               ConfirmPassword : ConfirmPassword
+           }); 
+
+           user.save().then((data)=>{
+            console.log(data);
+            res.status(200).send(data);
+
+           }).catch((err)=>{
+               console.log(err);
+           });
+       }
+
+   });
+});
+
 module.exports = router;

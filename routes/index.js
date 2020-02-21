@@ -1,7 +1,7 @@
 var express = require('express');
 
 var router = express.Router();
-router.get('/index', (req, res)=>{
+router.get('/', (req, res)=>{
     res.render('home', {
         title : 'Home',
         style : 'users.css',
