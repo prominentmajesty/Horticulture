@@ -10,6 +10,11 @@ $(function () {
       });
     });
   });
+
+  $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+});
   
   var UserName = document.getElementById('UserName');
   var Email = document.getElementById('Email');
@@ -17,17 +22,50 @@ $(function () {
   var ConfirmPassword = document.getElementById('ConfirmPassword');
   var submitButton = document.getElementById('submitButton');
   var alartDiv = document.getElementById('alartDiv');
-  var signupForm = document.signupForm;
-  
+  var alert_success = document.getElementById('alert_success'); 
+  var signupForm = document.signupForm;  
+  var CropPayment = document.getElementById('CropPayment');
+  var forGuarden = document.getElementById('forGuarden');
+  var forGalery = document.getElementById('forGalery');
+  var setting = document.getElementById('setting');
+
   var regexForUserName = /^[0-9a-zA-Z]{1,300}$/;
   var regexForEmailAddres = /^([a-z\d]{2,})@([a-z]{2,7})\.([a-z]{2,3})(\.[a-z]{2,3})?/;
-  var regexForPassword = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
-  var regexForConfirmPassword = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
+  var regexForPassword = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+  var regexForConfirmPassword = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
 $(document).ready(function(){
+$('#ForVideo').css('display','none');
+$('#ForPhoto').css('display','none');
+$('#forTable').css('display','none');
 
+CropPayment.addEventListener('click', function(){
+  $('#payforCrops').css('display','block');
+  $('#ForVideo').css('display','none');  
+  $('#ForPhoto').css('display','none');
+  $('#forTable').css('display','none');
+})
+forGuarden.addEventListener('click', function(){
+  $('#ForVideo').css('display','block');
+  $('#payforCrops').css('display','none');
+  $('#ForPhoto').css('display','none');
+  $('#forTable').css('display','none');
+});
+forGalery.addEventListener('click', function(){
+  $('#ForPhoto').css('display','block');
+  $('#payforCrops').css('display','none');
+  $('#ForVideo').css('display','none'); 
+  $('#forTable').css('display','none');
+});
+setting.addEventListener('click', function(){
+  $('#forTable').css('display','block');
+  $('#payforCrops').css('display','none');
+  $('#ForVideo').css('display','none'); 
+  $('#ForPhoto').css('display','none');
+});
   alartDiv.style.display = 'none';
-  
+  alert_success.style.display = 'none';
+
   UserName.addEventListener('mouseenter', function(){
     $(this).tooltip({
       title : "Enter Your UserName e.g Ugo.. or ugo98.."
@@ -134,16 +172,17 @@ $(document).ready(function(){
 
       function checkIfUserIsEmpty(){
         if(UserName.value === '' || UserName.value.trim() === ''){
-          $(alartDiv).html('');
+          $('#alartDiv').html('');
           var content = document.createTextNode("UserName Text Field is empty");
           alartDiv.appendChild(content);
           alartDiv.style.display = 'block';
           UserName.classList.remove('is-valid');
           UserName.classList.add('is-invalid');
           UserName.focus();
+          UserName.blur();
           setTimeout(function(){
             $('#alartDiv').fadeOut();
-          },7000);
+          },7000, UserName.focus());
           return false;
         }else{
           UserName.classList.remove('is-invalid');
@@ -155,16 +194,17 @@ $(document).ready(function(){
 
       function checkIfEmailIsEmpty(){
         if(Email.value === '' || Email.value.trim() === ''){
-          $(alartDiv).html('');
+          $('#alartDiv').html('');
           var content = document.createTextNode("Email Text Field is empty");
           alartDiv.appendChild(content);
           alartDiv.style.display = 'block';
           Email.classList.remove('is-valid');
           Email.classList.add('is-invalid');
           Email.focus();
+          Email.blur();
           setTimeout(function(){
             $('#alartDiv').fadeOut();
-          },7000);
+          },7000, Email.focus());
           return false;
         }else{
           Email.classList.remove('is-invalid');
@@ -176,7 +216,7 @@ $(document).ready(function(){
 
       function checkIfPasswordIsEmpty(){
         if(Password.value === '' || Password.value.trim() === ''){
-          $(alartDiv).html('');
+          $('#alartDiv').html('');
           var content = document.createTextNode("Password TextField Is Empty");
           alartDiv.appendChild(content);
           alartDiv.style.display = 'block';
@@ -196,7 +236,7 @@ $(document).ready(function(){
 
       function checkIfConfirmPasswordIsEmpty(){
         if(ConfirmPassword.value === '' || ConfirmPassword.value.trim() === ''){
-          $(alartDiv).html('');
+          $('#alartDiv').html('');
           var content = document.createTextNode("Confirm password TextField is empty");
           alartDiv.appendChild(content);
           alartDiv.style.display = 'block';
@@ -216,7 +256,7 @@ $(document).ready(function(){
 
       function validateUserName(){
         if(!regexForUserName.test(UserName.value)){
-          $(alartDiv).html('');
+          $('#alartDiv').html('');
           var content = document.createTextNode("Error !! Wrong computation parttern");
           alartDiv.appendChild(content);
           alartDiv.style.display = 'block';
@@ -230,14 +270,13 @@ $(document).ready(function(){
             return false;
         }else{
           UserName.classList.remove('is-invalid');
-          UserName.classList.remove('is-valid');
+          UserName.classList.remove('is-valid'); 
           return true;
         }
       }
-
       function validateEmail(){
         if(!regexForEmailAddres.test(Email.value)){
-          $(alartDiv).html('');
+          $('#alartDiv').html('');
           var content = document.createTextNode("Error !! Wrong Email Address");
           alartDiv.appendChild(content);
           alartDiv.style.display = 'block';
@@ -258,7 +297,7 @@ $(document).ready(function(){
 
       function validatePassword(){
         if(!regexForPassword.test(Password.value)){
-          $(alartDiv).html('');
+          $('#alartDiv').html('');
           var content = document.createTextNode("Error !! Wrong password parttern, password should contain alpha numeric and at least a special character and must be greater than 7");
           alartDiv.appendChild(content);
           alartDiv.style.display = 'block';
@@ -279,7 +318,7 @@ $(document).ready(function(){
 
       function validateConfirmPassword(){
         if(!regexForConfirmPassword.test(ConfirmPassword.value)){
-          $(alartDiv).html('');
+          $('#alartDiv').html('');
           var content = document.createTextNode("Error !! Wrong password parttern, password should contain alpha numeric and at least a special character and must be greater than 7");
           alartDiv.appendChild(content);
           alartDiv.style.display = 'block';
@@ -309,8 +348,7 @@ $(document).ready(function(){
           method : 'POST',
           url : '/users/postData',
           dataType : 'json',
-          data : postData,
-
+          data : postData,  
           statusCode : {
               406 : function(msg, status, jqXHR){
                 console.log(status);
@@ -319,16 +357,44 @@ $(document).ready(function(){
                 console.log(status);
               },
             200 : function(msg, status, jqXHR){
-              console.log(status);
+              console.log(status); 
             }
           },
-
         }).done(function (msg, status, jqXHR) {
             console.log(jqXHR.responseJSON.data);
             signupForm.reset();
-
+            UserName.focus();
+            UserName.blur();
+            UserName.classList.remove('is-valid');
+            UserName.classList.remove('is-invalid');
+            Email.classList.remove('is-valid');
+            Email.classList.remove('is-invalid');
+            Password.classList.remove('is-valid');
+            Password.classList.remove('is-invalid');
+            ConfirmPassword.classList.remove('is-valid');
+            ConfirmPassword.classList.remove('is-invalid');
+            $('#alert_success').html('');
+            var content = document.createTextNode("Success !! A new Email " + jqXHR.responseJSON.data.Email + " Was Registered and Your ID Is : " + jqXHR.responseJSON.data._id + "");
+            alert_success.appendChild(content);
+            alert_success.style.display = 'block';
+            setTimeout(function(){
+              $('#alert_success').fadeOut();
+            },6000);
         }).fail(function (jqXHR, textStatus) {
             console.log(jqXHR.responseJSON.msg);
+            Email.value = '';
+            Email.classList.remove('is-valid');
+            Email.classList.add('is-invalid');
+            //$('#Email').autocompleter = null;
+            Email.focus();
+            Email.blur();
+            $('#alartDiv').html('');
+            const content = document.createTextNode(jqXHR.responseJSON.msg);
+            alartDiv.appendChild(content);
+            alartDiv.style.display = 'block';
+            setTimeout(function(){
+              $('#alartDiv').fadeOut();
+            },7000, Email.focus());
         });
       }
 

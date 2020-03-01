@@ -11,8 +11,7 @@ body{
     opacity : 0.8;
 }
 
-footer{
-    background-color:#3f3f3f;
+#footer{
     color: #d5d5d5;
     padding-top: 2rem;
 }

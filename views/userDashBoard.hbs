@@ -1,0 +1,272 @@
+{{> header}}
+<div class="container-fluid display-table fluidformat">
+    <div class="row display-table-row">
+        <!--- Side Menu -->
+        <div class="col-md-2 bg-dark display-table-cell" id="side-manu" style="padding-top: 55px;">
+            <div class="col-4 text-center"style="padding-left:79px">
+                <i class="fas fa-user-circle"style="font-size:37px; color: rgb(163, 255, 255)"></i>
+            </div>
+            <h5 style="color: rgb(255, 255, 255); margin-left:62px; margin-top:6px">Odoemene</h5>
+            <div class="row"style="padding-left:33px;padding-top:20px;"id="forDashBoard">
+                <div class="dashboard">
+                    <i class="fas fa-th" style="font-size:22px; color: rgba(8, 100, 54, 0.096), 0.493), 0.493)"></i>
+                </div>
+                <h6 style="margin-left: 11px; margin-top:4px" id="dashboardLabel">dashboard</h6>
+            </div>
+             <div class="row"style="padding-left:33px;padding-top:20px;" id="forCrop">
+                <div class="dashboard">
+                    <i class="far fa-credit-card"style="font-size:22px; color: rgba(8, 100, 54, 0.096), 0.493), 0.493)"></i>
+                </div>
+                <h6 style="margin-left: 11px; margin-top:4px;" id="CropPayment">pay for crops</h6>
+            </div>
+            <div class="row"style="padding-left:33px;padding-top:20px;" id="ToBuildGuarden">
+                <div class="dashboard">
+                    <i class="fas fa-chalkboard-teacher"style="font-size:22px; color: rgba(8, 100, 54, 0.096), 0.493), 0.493)"></i>
+                </div>
+                <h6 style="margin-left: 11px; margin-top:4px;" id="forGuarden">learn to build a garden</h6>
+            </div>
+            <div class="row"style="padding-left:33px;padding-top:20px;" id="gallery">
+                <div class="dashboard">
+                    <i class="fas fa-folder-open"style="font-size:22px; color: rgba(8, 100, 54, 0.096), 0.493), 0.493)"></i>
+                </div>
+                <h6 style="margin-left: 11px; margin-top:4px;" id="forGalery"> view galary</h6>
+            </div>
+             <div class="row"style="padding-left:33px;padding-top:20px;" id="setingFormat">
+                <div class="dashboard">
+                    <i class="fas fa-cogs"style="font-size:22px; color: rgba(8, 100, 54, 0.096), 0.493), 0.493)"></i>
+                </div>
+                <h6 style="margin-left: 11px; margin-top:4px;" id="setting">setting</h6>
+                <div class="12-pics text-center" style="background-color: rgb(22, 104, 96);padding-left:5px;padding-right:5px; border-radius:7px;margin-left:35px;"><i class="far fa-check-circle" style="margin-top:7px;font-color:thistle"></i></div>
+            </div>
+            <div class="row"style="padding-left:33px;padding-top:20px;" id="contactFormat">
+                <div class="dashboard">
+                    <i class="fas fa-phone-volume"style="font-size:22px; color: rgba(8, 100, 54, 0.096), 0.493), 0.493)"></i>
+                </div>
+                <h6 style="margin-left: 11px; margin-top:4px" id="contact">contacts</h6>
+                <div class="12-pics text-center" style="background-color: rgb(22, 104, 96);padding-left:5px;padding-right:5px; border-radius:7px;margin-left:35px;"><h6 style="margin-top:7px;font-color:thistle">13</h6></div>
+            </div> 
+        </div>
+        <!-- Main Content Area -->
+        <div class="col-md-10 display-table-cell">
+            <div class="row" id="fffo" style="padding-top: 10px; padding-bottom:10px">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search..." id="forCursor" aria-label="Search" style="margin-left:15px;margin-bottom:2px; border-color:turquoise">
+                </form>
+                <div class="col-12" id="makeChange">
+                    <div class="float-lg-right float-sm-left right-formation" id="envelopeId">
+                        <h1 class="displayName"style="margin-left:-353px;padding-left : 5px; padding-right : 5px; font-weight :normal;font-size:21px;margin-top:-2px;position:absolute">welcome odoemene ugochukwu...</h1>
+                        <i class="fas fa-sign-out-alt" style="margin-left : 12px;font-size:20px;color:rgb(156, 150, 137)"></i><h6 style="margin-left: 35px; margin-top:-23px">logout</h6>
+                    </div>
+                    <div class="float-lg-right float-sm-left right-formation1" id="envelopeId">
+                        <i class="fas fa-user-circle"style="font-size:20px;"></i>
+                        <span class="bellabel" style="background-color: rgb(163, 255, 255); margin-left:-3px;padding-left : 5px; padding-right : 5px; font-weight :normal;border-radius:15px;margin-top:-9px;position:absolute">active</span>
+                    </div>
+                </div>
+            </div> 
+            <div class="holdContent" style="padding-top:10px; padding-bottom:14px;padding-left:100px; background-color : white;margin-left:-15px;margin-right:-16px">
+                <div class="container formatpayForCrops" id="formatpayForCrops">
+                    <div class="row" id="payforCrops"> 
+                        <div class="col-9 formatPayForCrops">
+                            <form>
+                                <div class="request">
+                                    <h4>Request for flowers and crops</h4>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Name</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Full Name...">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Select Veriety of Crops</label>
+                                    <select class="custom-select">
+                                        <option value="vagetable">vagetables</option>
+                                        <option value="crops">Crops</option>
+                                    </select>
+                                </div>
+                                <div class="labeMakePayment">
+                                    <h5 class="payinfo">Payment Details</h5>
+                                </div>
+                                <div class="me">
+                                    <label for="validationDefaultUsername">Card Number</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend2"><i class="far fa-credit-card"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" id="inputForCardNumber" placeholder="Card Number" aria-describedby="inputGroupPrepend2" required>
+                                    </div>
+                                </div>
+                                <div class="me">
+                                    <label for="validationDefaultUsername">Card Code</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend2"><i class="fas fa-unlock-alt"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" id="inputForCardCode" placeholder="Card Code" aria-describedby="inputGroupPrepend2">
+                                    </div>
+                                </div>
+                                <div class="me">
+                                    <label for="validationDefaultUsername">Card Expiring Date</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend2"><i class="far fa-calendar-alt"></i></span>
+                                        </div>
+                                        <input type="text" placeholder="mm/yyyy" class="form-control" id="ExpiringDate" aria-describedby="inputGroupPrepend2">
+                                    </div>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">attach Image</label>
+                                </div>
+                                <button type="button" class="btn btn-secondary btn-lg btn-block" id="btn_launch">Send request</button>
+                            </form>
+                        </div>
+                    </div> 
+
+                    <div class="container" id="ForVideo">
+                        <div class="row">
+                            <div class="col-md-10 order-2"> 
+                                <div id="video-play">
+                                    <div class="dark-overlay">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="container p-5">
+                                                    <a href="#" class="video" data-video="https://www.youtube.com/embed/638PZqS7H-g"
+                                                    data-toggle="modal" data-target="#videoModal">
+                                                        <i class="fas fa-play fa-3x"></i>
+                                                    </a> 
+                                                    <h4 class="clickToLearnMore">Click to learn more</h4> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="modal fade" id="videoModal">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <button class="close" data-dismiss="modal">
+                                                    <span>&times;</span>
+                                                </button>
+                                                <iframe src="" frameborder="0" height="350"width="100%" allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container" id="ForPhoto">
+                        <h1 class="text-center">Photo Gallery</h1>
+                        <p class="text-center">Check Out our Photos</p>
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <a href="/images/p-3.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                                <img src="/images/p-3.jpg"alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="/images/pic-2.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                                <img src="/images/pic-2.jpg"alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="/images/pic-1.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                                <img src="/images/pic-1.jpg"alt="" class="img-fluid">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <a href="/images/pic-10.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                                <img src="/images/pic-10.jpg"alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="/images/pic-11.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                                <img src="/images/pic-11.jpg"alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="/images/pic-2.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                                <img src="/images/pic-2.jpg"alt="" class="img-fluid">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <a href="/images/pic-8.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                                <img src="/images/pic-8.jpg"alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="/images/pic-6.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                                <img src="/images/pic-6.jpg"alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="/images/pic-7.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                                <img src="/images/pic-7.jpg"alt="" class="img-fluid">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <a href="/images/pic-5.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                                <img src="/images/pic-5.jpg"alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="/images/pic-9.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                                <img src="/images/pic-9.jpg"alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="/images/p-4. jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                                <img src="/images/p-4.jpg"alt="" class="img-fluid">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contrainer" id="forTable">
+                        <div class="col-md-9">
+                            <table class="table table-hover" id="tableForItem">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                    <th scope="row">3</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                    <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{> footer}}

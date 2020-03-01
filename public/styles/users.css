@@ -57,3 +57,116 @@
 .clickToLearnMore{
     font-family: 'Press Start 2P', cursive;
 }
+.fluidformat{
+    font-family: 'Open Sans Condensed';
+    background-color: #f3f3f4;
+    color: #676a6c;
+    margin-top: 59px;
+}
+#side-manu{
+    background-color: #2f4050;
+    padding: 0px;
+}
+#side-manu h1{
+    color : #1f3647;
+    text-align: center;
+    margin: 10px 10px;
+    font-size: 25px;
+}
+.right-formation{
+    margin-top: -20px;
+    margin-right: 115px;
+}
+.right-formation1{
+    margin-top: -20px;
+    margin-right: 40px;
+}
+#CropPayment{
+    color: silver;
+}
+#CropPayment:hover{
+    cursor: pointer;
+    color: whitesmoke;
+}
+#forCrop:hover{
+    color: whitesmoke;
+    cursor: pointer;
+}
+#dashboardLabel{
+    color: silver;
+}
+#dashboardLabel:hover{
+    cursor: pointer;
+    color: whitesmoke;
+}
+#forDashBoard:hover{
+cursor: pointer;
+color: whitesmoke;
+}
+#btn_launch{
+    margin-top: 20px;
+}
+#formatpayForCrops{
+    margin-bottom: 15px;
+}
+#ToBuildGuarden:hover{
+    cursor: pointer;
+    color: whitesmoke;
+}
+#forGuarden{
+    color: silver;
+}
+#forGuarden:hover{
+    color: whitesmoke;
+}
+#forGalery{
+    color: silver;
+}
+#forGalery:hover{
+    color: whitesmoke;
+}
+#gallery:hover{
+    cursor: pointer;
+    color: whitesmoke;
+}
+#setting{
+    color: silver;
+}
+#setting:hover{
+    color: whitesmoke;
+}
+#setingFormat:hover{
+    cursor: pointer;
+    color: whitesmoke;
+}
+#settings:hover{
+    color: whitesmoke;
+}
+#contactFormat:hover{
+    cursor: pointer;
+    color: whitesmoke;
+}
+#contact{
+    color: silver;
+}
+#contact:hover{
+    color: whitesmoke;
+}
+.request{
+    margin-left: 60px;
+    padding-bottom: 15px;
+    padding-top: 18px;
+    color: rgb(5, 160, 160);;
+}
+.labeMakePayment{
+    padding-left: 50px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color: rgb(5, 160, 160);
+}
+.custom-file{
+    margin-top: 20px;
+}
+.me{
+    padding-bottom: 18px;
+}
