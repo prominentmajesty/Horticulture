@@ -6,7 +6,7 @@
             <div class="col-4 text-center"style="padding-left:79px">
                 <i class="fas fa-user-circle"style="font-size:37px; color: rgb(163, 255, 255)"></i>
             </div>
-            <h5 style="color: rgb(255, 255, 255); margin-left:62px; margin-top:6px">Odoemene</h5>
+            <h5 style="color: rgb(255, 255, 255); margin-left:62px; margin-top:6px">User Account</h5>
             <div class="row"style="padding-left:33px;padding-top:20px;"id="forDashBoard">
                 <div class="dashboard">
                     <i class="fas fa-th" style="font-size:22px; color: rgba(8, 100, 54, 0.096), 0.493), 0.493)"></i>
@@ -54,8 +54,8 @@
                 </form>
                 <div class="col-12" id="makeChange">
                     <div class="float-lg-right float-sm-left right-formation" id="envelopeId">
-                        <h1 class="displayName"style="margin-left:-353px;padding-left : 5px; padding-right : 5px; font-weight :normal;font-size:21px;margin-top:-2px;position:absolute">welcome odoemene ugochukwu...</h1>
-                        <i class="fas fa-sign-out-alt" style="margin-left : 12px;font-size:20px;color:rgb(156, 150, 137)"></i><h6 style="margin-left: 35px; margin-top:-23px">logout</h6>
+                        <h1 class="displayName"style="margin-left:-353px;padding-left : 5px; padding-right : 5px; font-weight :normal;font-size:21px;margin-top:-2px;position:absolute"></h1>
+                        <i class="fas fa-sign-out-alt" style="margin-left : 12px;font-size:20px;color:rgb(156, 150, 137)"></i><h6 style="margin-left: 35px; margin-top:-23px" id="logout">logout</h6>
                     </div>
                     <div class="float-lg-right float-sm-left right-formation1" id="envelopeId">
                         <i class="fas fa-user-circle"style="font-size:20px;"></i>
@@ -67,17 +67,23 @@
                 <div class="container formatpayForCrops" id="formatpayForCrops">
                     <div class="row" id="payforCrops"> 
                         <div class="col-9 formatPayForCrops">
-                            <form>
+                            <form name="signupFormForCropPayment" id="signupFormForCropPayment">
+                                <div class="alert alert-success" role="alert" id="showSuccessAlart">
+                                Success !! Your Proccesssing Was Successful
+                                </div>
+                                <div class="alert alert-danger" role="alert" id="showErrorAlart">
+                                    Error !! Your Request Was Unsessfull
+                                </div>
                                 <div class="request">
                                     <h4>Request for flowers and crops</h4>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Name</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Full Name...">
+                                    <label for="fullName">Name</label>
+                                    <input type="text" name="" class="form-control" id="fullName" placeholder="Full Name...">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Select Veriety of Crops</label>
-                                    <select class="custom-select">
+                                    <label for="cropVariety">Select Veriety of Crops</label>
+                                    <select class="custom-select" id="cropVariety">
                                         <option value="vagetable">vagetables</option>
                                         <option value="crops">Crops</option>
                                     </select>
@@ -86,35 +92,31 @@
                                     <h5 class="payinfo">Payment Details</h5>
                                 </div>
                                 <div class="me">
-                                    <label for="validationDefaultUsername">Card Number</label>
+                                    <label for="cardNumberForPayment">Card Number</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                         <span class="input-group-text" id="inputGroupPrepend2"><i class="far fa-credit-card"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="inputForCardNumber" placeholder="Card Number" aria-describedby="inputGroupPrepend2" required>
+                                        <input type="text" class="form-control" id="cardNumberForPayment" placeholder="Card Number" aria-describedby="inputGroupPrepend2" required>
                                     </div>
                                 </div>
                                 <div class="me">
-                                    <label for="validationDefaultUsername">Card Code</label>
+                                    <label for="cardCodeForPayment">Card Code</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                         <span class="input-group-text" id="inputGroupPrepend2"><i class="fas fa-unlock-alt"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="inputForCardCode" placeholder="Card Code" aria-describedby="inputGroupPrepend2">
+                                        <input type="text" class="form-control" id="cardCodeForPayment" placeholder="Card Code" aria-describedby="inputGroupPrepend2">
                                     </div>
                                 </div>
                                 <div class="me">
-                                    <label for="validationDefaultUsername">Card Expiring Date</label>
+                                    <label for="expiringDatForPayment">Card Expiring Date</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                         <span class="input-group-text" id="inputGroupPrepend2"><i class="far fa-calendar-alt"></i></span>
                                         </div>
-                                        <input type="text" placeholder="mm/yyyy" class="form-control" id="ExpiringDate" aria-describedby="inputGroupPrepend2">
+                                        <input type="text" placeholder="mm/yyyy" class="form-control" id="expiringDatForPayment" aria-describedby="inputGroupPrepend2">
                                     </div>
-                                </div>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <label class="custom-file-label" for="customFile">attach Image</label>
                                 </div>
                                 <button type="button" class="btn btn-secondary btn-lg btn-block" id="btn_launch">Send request</button>
                             </form>

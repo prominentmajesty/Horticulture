@@ -1,3 +1,3 @@
 module.exports = {
-    config : 'mongodb://localhost:27017/horticulture'
+    config : 'mongodb+srv://horticulture:horticulture@horticulture-mtbel.mongodb.net/test?retryWrites=true&w=majority'
 }

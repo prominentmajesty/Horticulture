@@ -1,174 +1,131 @@
-$(function () {
-    // Auto play modal video
-    $(".video").click(function () {
-      var theModal = $(this).data("target"),
-        videoSRC = $(this).attr("data-video"),
-        videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
-      $(theModal + ' iframe').attr('src', videoSRCauto);
-      $(theModal + ' button.close').click(function () {
-        $(theModal + ' iframe').attr('src', videoSRC);
+window.onload=function(){
+      $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
       });
-    });
-  });
+      var UserName = document.getElementById('UserName');
+      var Email = document.getElementById('Email');
+      var Password = document.getElementById('Password');
+      var ConfirmPassword = document.getElementById('ConfirmPassword');
+      var submitButton = document.getElementById('submitButton');
+      var alartDiv = document.getElementById('alartDiv');
+      var alert_success = document.getElementById('alert_success');
+      var btgnLogin = document.getElementById('btgnLogin'); 
+      var signupForm = document.signupForm;  
+      var regexForUserName = /^[0-9a-zA-Z]{1,300}$/;
+      var regexForEmailAddres = /^([a-z\d]{2,})@([a-z]{2,7})\.([a-z]{2,3})(\.[a-z]{2,3})?/;
+      var regexForPassword = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+      var regexForConfirmPassword = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
-  $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-    event.preventDefault();
-    $(this).ekkoLightbox();
-});
-  
-  var UserName = document.getElementById('UserName');
-  var Email = document.getElementById('Email');
-  var Password = document.getElementById('Password');
-  var ConfirmPassword = document.getElementById('ConfirmPassword');
-  var submitButton = document.getElementById('submitButton');
-  var alartDiv = document.getElementById('alartDiv');
-  var alert_success = document.getElementById('alert_success'); 
-  var signupForm = document.signupForm;  
-  var CropPayment = document.getElementById('CropPayment');
-  var forGuarden = document.getElementById('forGuarden');
-  var forGalery = document.getElementById('forGalery');
-  var setting = document.getElementById('setting');
-
-  var regexForUserName = /^[0-9a-zA-Z]{1,300}$/;
-  var regexForEmailAddres = /^([a-z\d]{2,})@([a-z]{2,7})\.([a-z]{2,3})(\.[a-z]{2,3})?/;
-  var regexForPassword = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-  var regexForConfirmPassword = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-
-$(document).ready(function(){
-$('#ForVideo').css('display','none');
-$('#ForPhoto').css('display','none');
-$('#forTable').css('display','none');
-
-CropPayment.addEventListener('click', function(){
-  $('#payforCrops').css('display','block');
-  $('#ForVideo').css('display','none');  
-  $('#ForPhoto').css('display','none');
-  $('#forTable').css('display','none');
-})
-forGuarden.addEventListener('click', function(){
-  $('#ForVideo').css('display','block');
-  $('#payforCrops').css('display','none');
-  $('#ForPhoto').css('display','none');
-  $('#forTable').css('display','none');
-});
-forGalery.addEventListener('click', function(){
-  $('#ForPhoto').css('display','block');
-  $('#payforCrops').css('display','none');
-  $('#ForVideo').css('display','none'); 
-  $('#forTable').css('display','none');
-});
-setting.addEventListener('click', function(){
-  $('#forTable').css('display','block');
-  $('#payforCrops').css('display','none');
-  $('#ForVideo').css('display','none'); 
-  $('#ForPhoto').css('display','none');
-});
-  alartDiv.style.display = 'none';
-  alert_success.style.display = 'none';
-
-  UserName.addEventListener('mouseenter', function(){
-    $(this).tooltip({
-      title : "Enter Your UserName e.g Ugo.. or ugo98.."
-    });
-  });
-
-  Email.addEventListener('mouseenter', function(){
-    $(this).tooltip({
-      title : "Enter Email Address e.g ugc@gmail.com"
-    });
-  });
-
-  Password.addEventListener('mouseenter', function(){
-    $(this).tooltip({
-      title : " Enter password : Password must be alpha-numeric , contain at least one sigle character and must not be less than eight"
-    });
-  });
-
-    ConfirmPassword.addEventListener('mouseenter', function(){
-      $(this).tooltip({
-        title : "re-enter password : Password must be alpha-numeric , contain at least one sigle character and must not be less than eight"
+      alartDiv.style.display = 'none';
+      alert_success.style.display ='none';
+      btgnLogin.addEventListener('click', function(){
+        window.location.href = '/users/userDashboard';
       });
-    });
 
-    UserName.addEventListener('mouseleave', function(){
-      $(this).tooltip('dispose');
-    });
-
-    Email.addEventListener('mouseleave', function(){
-      $(this).tooltip('dispose');
-    });
-
-    Password.addEventListener('mouseleave', function(){
-      $(this).tooltip('dispose');
-    });
-
-    ConfirmPassword.addEventListener('mouseleave', function(){
-      $(this).tooltip('dispose');
-    });
-
-    UserName.addEventListener('keyup', function(e){
-      $(this).tooltip({
-        title : "Enter Your UserName e.g Ugo.. or ugo98.."
+      UserName.addEventListener('mouseenter', function(){
+        $(this).tooltip({
+          title : "Enter Your UserName e.g Ugo.. or ugo98.."
+        });
       });
-      if(!regexForUserName.test(e.target.value)){
-          event.target.classList.add('is-invalid');
-          event.target.classList.remove('is-valid');
-          UserName.style.borderColor = 'red';
-      }else{
-        $(this).tooltip('dispose');
-        event.target.classList.remove('is-invalid');
-        event.target.classList.add('is-valid');
-        UserName.style.borderColor = '#36cc36';
-      }
-    });
 
-    Email.addEventListener('keyup', function(e){
-      $(this).tooltip({
-        title : "Enter Email Address e.g ugc@gmail.com"
+      Email.addEventListener('mouseenter', function(){
+        $(this).tooltip({
+          title : "Enter Email Address e.g ugc@gmail.com"
+        });
       });
-      if(!regexForEmailAddres.test(e.target.value)){
-        e.target.classList.remove('is-valid');
-        e.target.classList.add('is-invalid');
-        Email.style.borderColor = 'red';
-      }else{
-        $(this).tooltip('dispose')
-        e.target.classList.remove('is-invalid');
-        e.target.classList.add('is-valid');
-        Email.style.borderColor = '#36cc36';
-      }
-    });
 
-    Password.addEventListener('keyup', function(e){
-      $(this).tooltip({
-        title : "Enter password : Password must be alpha-numeric , contain at least one sigle character and must not be less than eight"
+      Password.addEventListener('mouseenter', function(){
+        $(this).tooltip({
+          title : " Enter password : Password must be alpha-numeric , contain at least one sigle character and must not be less than eight"
+        });
       });
-      if(!regexForPassword.test(e.target.value)){
+
+        ConfirmPassword.addEventListener('mouseenter', function(){
+          $(this).tooltip({
+            title : "re-enter password : Password must be alpha-numeric , contain at least one sigle character and must not be less than eight"
+          });
+        });
+
+        UserName.addEventListener('mouseleave', function(){
+          $(this).tooltip('dispose');
+        });
+
+        Email.addEventListener('mouseleave', function(){
+          $(this).tooltip('dispose');
+        });
+
+        Password.addEventListener('mouseleave', function(){
+          $(this).tooltip('dispose');
+        });
+
+        ConfirmPassword.addEventListener('mouseleave', function(){
+          $(this).tooltip('dispose');
+        });
+
+      UserName.addEventListener('keyup', function(e){
+        $(this).tooltip({
+          title : "Enter Your UserName e.g Ugo.. or ugo98.."
+        });
+        if(!regexForUserName.test(e.target.value)){
+            event.target.classList.add('is-invalid');
+            event.target.classList.remove('is-valid');
+            UserName.style.borderColor = 'red';
+        }else{
+          $(this).tooltip('dispose');
+          event.target.classList.remove('is-invalid');
+          event.target.classList.add('is-valid');
+          UserName.style.borderColor = '#36cc36';
+        }
+      });
+
+      Email.addEventListener('keyup', function(e){
+        $(this).tooltip({
+          title : "Enter Email Address e.g ugc@gmail.com"
+        });
+        if(!regexForEmailAddres.test(e.target.value)){
           e.target.classList.remove('is-valid');
           e.target.classList.add('is-invalid');
-          Password.style.borderColor = 'red';
-      }else{
-        $(this).tooltip('dispose')
-        e.target.classList.remove('is-invalid');
-        e.target.classList.add('is-valid');
-        Password.style.borderColor = '#36cc36';
-      }
-    });
-
-    ConfirmPassword.addEventListener('keyup', function(e){
-      $(this).tooltip({
-        title : "re-enter password : Password must be alpha-numeric , contain at least one sigle character and must not be less than eight"
+          Email.style.borderColor = 'red';
+        }else{
+          $(this).tooltip('dispose')
+          e.target.classList.remove('is-invalid');
+          e.target.classList.add('is-valid');
+          Email.style.borderColor = '#36cc36';
+        }
       });
-      if(!regexForConfirmPassword.test(e.target.value)){
-        e.target.classList.remove('is-valid');
-        e.target.classList.add('is-invalid');
-        ConfirmPassword.style.borderColor = 'red';
-      }else{
-        $(this).tooltip('dispose');
-        e.target.classList.remove('is-invalid');
-        e.target.classList.add('is-valid');
-        ConfirmPassword.style.borderColor ='#36cc36';
-      }
-    });
+
+      Password.addEventListener('keyup', function(e){
+        $(this).tooltip({
+          title : "Enter password : Password must be alpha-numeric , contain at least one sigle character and must not be less than eight"
+        });
+        if(!regexForPassword.test(e.target.value)){
+            e.target.classList.remove('is-valid');
+            e.target.classList.add('is-invalid');
+            Password.style.borderColor = 'red';
+        }else{
+          $(this).tooltip('dispose')
+          e.target.classList.remove('is-invalid');
+          e.target.classList.add('is-valid');
+          Password.style.borderColor = '#36cc36';
+        }
+      });
+
+      ConfirmPassword.addEventListener('keyup', function(e){
+        $(this).tooltip({
+          title : "re-enter password : Password must be alpha-numeric , contain at least one sigle character and must not be less than eight"
+        });
+        if(!regexForConfirmPassword.test(e.target.value)){
+          e.target.classList.remove('is-valid');
+          e.target.classList.add('is-invalid');
+          ConfirmPassword.style.borderColor = 'red';
+        }else{
+          $(this).tooltip('dispose');
+          e.target.classList.remove('is-invalid');
+          e.target.classList.add('is-valid');
+          ConfirmPassword.style.borderColor ='#36cc36';
+        }
+      });
 
       function checkIfUserIsEmpty(){
         if(UserName.value === '' || UserName.value.trim() === ''){
@@ -417,6 +374,6 @@ setting.addEventListener('click', function(){
             }
           }
       });
-
-  });
+      
+};
 

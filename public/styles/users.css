@@ -167,6 +167,16 @@ color: whitesmoke;
 .custom-file{
     margin-top: 20px;
 }
+#logout:hover{
+    cursor: pointer;
+}
+#envelopeId:hover{
+    cursor: pointer;
+}
 .me{
     padding-bottom: 18px;
+}
+#admin{
+    margin-top: 120px !important;
+    margin-bottom: 50px;
 }

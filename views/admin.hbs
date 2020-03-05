@@ -1,0 +1,42 @@
+{{> header}}
+<div class="container pt-30 pb-20" id="admin">
+    <form action="/users/getUsers" method="POST">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Enter Your Id</label>
+            <input type="text" class="form-control" name="getIdInput" aria-describedby="emailHelp" placeholder="Enter Your Id">
+            <small id="emailHelp" class="form-text text-muted"></small>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="launchbtn">Fing User</button>
+    </form>
+</div>
+
+</div>
+    <div class="container">
+        {{#if doc}}
+            <div class="row">
+                <div class="co-md-12" style="background-color: cornsilk;">
+                    {{#each doc}}
+                        <table class="table table-hover" id="tableForItem">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">Crop Variety</th>
+                                    <th scope="col">ID</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <td>{{this.fullName}}</td>
+                                    <td>{{this.cropVariety}}</td>
+                                    <td>{{this._id}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        {{/if}}
+        </div>
+
+
+{{> footer}}

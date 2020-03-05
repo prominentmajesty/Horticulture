@@ -17,5 +17,8 @@
     "express-session": "^1.17.0",
     "mongoose": "^5.8.12",
     "mongoose-sequence": "^5.2.2"
+  },
+  "devDependencies": {
+    "handlebars": "^4.7.3"
   }
 }
