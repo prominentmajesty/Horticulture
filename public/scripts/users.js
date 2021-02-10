@@ -144,7 +144,7 @@ window.onload=function(){
         }else{
           UserName.classList.remove('is-invalid');
           UserName.classList.remove('is-valid');
-          UserName.style.borderColor = '#36cc36'
+          UserName.style.borderColor = '#36cc36';
           return true;
         }
       }
