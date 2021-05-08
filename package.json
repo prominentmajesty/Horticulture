@@ -22,6 +22,6 @@
     "mongoose-sequence": "^5.2.2"
   },
   "devDependencies": {
-    "handlebars": "^4.7.3"
+    "handlebars": "^4.7.7"
   }
 }
